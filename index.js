@@ -120,8 +120,8 @@ function criarPalavra (){
 criarPalavra ()
 
   function mostrarNatela(){
-   const palavratelaSorteada= document.getElementById('palavra-secreta');
-   palavratelaSorteada.innerHTML ='';
+   const palavratelaSorteada= document.getElementById("palavra-secreta");
+   palavratelaSorteada.innerHTML="";
 
    const palavratelaCategoria= document.getElementById('categoria');
    palavratelaCategoria.innerHTML = palavraCategoria;
@@ -135,9 +135,9 @@ criarPalavra ()
       }
       else{
          palavratelaSorteada.innerHTML=palavratelaSorteada.innerHTML+ "<div class='letras'>"+ lista[i]+"</div>"
-         palavratelaSorteada.
+   
       }
-      compararLista
+     
    }
 }
 mostrarNatela()
@@ -145,8 +145,10 @@ mostrarNatela()
 function verificaLetraEscolhida(letra){
    mudarTecla("tecla-"+letra)
    compararLista(letra)
-   
+   mostrarNatela();
+
 }
+
 
 function mudarTecla(tecla){
    document.getElementById(tecla).style.background="#c71585";
@@ -155,26 +157,27 @@ function mudarTecla(tecla){
 }
 
 function compararLista(letra){
-  const posi = palavratelaSorteada.indexOF(letra)
-  if(pos<0){
-   tentativa--
-  }
-  else {
-   for( i=0; i<palavratelaSorteada.length; i++){
-      if(palavratelaSorteada[i]=letra){
-         lista[i]=letra;
-
-      }
+   const posi =  palavraSorteada.indexOF(letra)
+   if(posi<0){
+    tentativa--
    }
-}
-   
-}
+   else {
+    for( i=0; i<palavratelaSorteada.length; i++){
+       if(palavratelaSorteada[i]=letra){
+          lista[i]=letra;
  
- function atualizar(){
+       }
+     }
+   }
+ }
+
+function atualizar(){
    location.reload();
 }
 
 btn.addEventListener("click", atualizar)
     
+   
+
 
 
